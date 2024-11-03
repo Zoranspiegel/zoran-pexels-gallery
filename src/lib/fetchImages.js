@@ -1,3 +1,4 @@
+import ImagesSchema from '@/models/Images';
 import env from './env';
 
 export default async function fetchImages(url) {
@@ -12,7 +13,9 @@ export default async function fetchImages(url) {
 
     const resJson = await res.json();
 
-    return resJson;
+    const images = ImagesSchema.parse(resJson);
+
+    return images;
   } catch (error) {
     console.error(error.message);
   }
