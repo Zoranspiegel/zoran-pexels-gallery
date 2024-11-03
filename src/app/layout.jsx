@@ -2,6 +2,8 @@ import { MedievalSharp } from 'next/font/google';
 import './global.css';
 import Navbar from './components/Navbar';
 
+export const revalidate = 3600;
+
 const medievalSharpFont = MedievalSharp({
   subsets: ['latin'],
   weight: '400',
@@ -9,8 +11,8 @@ const medievalSharpFont = MedievalSharp({
 });
 
 export const metadata = {
-  title: 'Pexel Gallery',
-  description: "Zoranspiegel's Next.js Pexel Photo Gallery"
+  title: "Zoran's Pexels Gallery",
+  description: "Zoranspiegel's Next.js Pexels Photo Gallery"
 };
 
 export default function RootLayout({ children }) {
