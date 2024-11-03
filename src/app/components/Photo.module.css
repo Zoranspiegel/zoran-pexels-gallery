@@ -1,0 +1,14 @@
+.photo__container {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background-color: white;
+}
+
+.photo__image {
+  transition: all 200ms ease-in-out;
+}
+
+.photo__container:hover .photo__image {
+  opacity: 0.75;
+}

@@ -1,6 +1,7 @@
 import fetchImages from '@/lib/fetchImages';
 import env from '@/lib/env';
 import Photo from './Photo';
+import styles from './Gallery.module.css';
 
 export default async function Gallery({ term }) {
   const imagesUrl = term
@@ -9,10 +10,10 @@ export default async function Gallery({ term }) {
 
   const images = await fetchImages(imagesUrl);
 
-  if (!images?.total_results) return <h1>No Images Found</h1>;
+  if (!images?.total_results) return <h1 className={styles.noimages__placeholder}>No Images Found</h1>;
 
   return (
-    <div>
+    <div className={styles.gallery__container}>
       {images.photos.map((photo) => (
         <Photo key={photo.id} photo={photo}/>
       ))}
