@@ -1,3 +1,5 @@
+import Gallery from './components/Gallery';
+
 export default function homePage() {
-  return <div>Wamo</div>;
+  return <Gallery/>;
 }
