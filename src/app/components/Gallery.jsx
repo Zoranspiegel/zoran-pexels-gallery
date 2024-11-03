@@ -1,5 +1,6 @@
 import fetchImages from '@/lib/fetchImages';
 import env from '@/lib/env';
+import Photo from './Photo';
 
 export default async function Gallery({ term }) {
   const imagesUrl = term
@@ -13,7 +14,7 @@ export default async function Gallery({ term }) {
   return (
     <div>
       {images.photos.map((photo) => (
-        <h1 key={photo.id}>{photo.alt}</h1>
+        <Photo key={photo.id} photo={photo}/>
       ))}
     </div>
   );
